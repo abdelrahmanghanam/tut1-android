@@ -20,12 +20,12 @@ open class Applicant() {
             return false
     }
 
-    fun graduation_age(graduationYear: Int): Int {
-        return age_restriction-(2021-graduationYear)
+    fun graduation_age(graduationYear: Int,age: Int): Int {
+        return age-(2021-graduationYear)
     }
 
     fun offer(name:String, experience: Int,age: Int,graduationYear: Int): String {
-        var gradAge: Int = graduation_age(graduationYear)
+        var gradAge: Int = graduation_age(graduationYear,age)
         if (!age_filter(age))
         {
             return "Sorry but your age doesn't match our requirements"
